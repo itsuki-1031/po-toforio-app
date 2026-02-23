@@ -11,7 +11,7 @@ export const verifyToken = (req, res, next ) => {
 
     try {
         const decoded = jwt.verify(token, "secretkey");
-        req.uset = decoded;
+        req.user = decoded;
         next();
     } catch (error) {
         console.error(error);
