@@ -1,5 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/authRoutes.js";
+import attendanceRoutes from "./routes/attendanceRoutes.js";
 import cors from "cors";
 
 //APIサーバーを作るためのコード
@@ -16,7 +17,7 @@ app.use(express.json());//JSONを受け取れるようにしている
 app.use("/api/auth", authRoutes);
 // /api/auth から始まるURLは
 //  authRoutes.js に任せるよ、という意味。
-
+app.use("/api/attendance", attendanceRoutes);
 
 app.listen(3100, () => {
   console.log("Server started on port 3100");

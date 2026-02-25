@@ -1,7 +1,11 @@
 import './App.css'
 import axios from 'axios'
+import { Login } from './Login.jsx';
+import { CheckIn } from './CheckIn.jsx';
+import { Register } from './Register.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+export const App = () => {
   const register = async () => {
     try {
       const res = await axios.post("http://localhost:3100/api/auth/register",{
@@ -20,6 +24,10 @@ function App() {
       <button onClick = {register}>
         APIテスト
       </button>
+      <Login/>
+      <CheckIn/>
+      <Register/>
+      
     </div>
   )
 }

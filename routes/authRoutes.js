@@ -6,7 +6,14 @@ import { verifyToken } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-let users = [];//仮のDB 実務ではここが: •MongoDB •PostgreSQL •Prismaのどれかになる
+let users = [
+    {
+        // email: "test@test.gmail.com",
+        email: "abc@test.gmail.com",
+        password: await bcrypt.hash("123456", 10)
+    }
+];//仮のDB 実務ではここが: •MongoDB •PostgreSQL •Prismaのどれかになる
+console.log("CURRENT USERS:", users);
 
 router.post('/register', async (req, res) => {
     try {
